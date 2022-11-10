@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    input {
+        @apply 
+            placeholder:text-sm placeholder:capitalize placeholder:text-placeholder
+            focus-within:outline-none bg-transparent
+    }
+}
+
+@layer components {
+    .container { @apply max-w-6xl mx-auto px-4 }
+    .btn { @apply flex items-center justify-center gap-1.5 w-fit rounded-3xl capitalize text-sm font-medium h-8 px-3 border }
+}

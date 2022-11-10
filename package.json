@@ -1,0 +1,15 @@
+{
+    "name": "tomatoo",
+    "version": "1.0.0",
+    "description": "Tomatoo - A commercial food website",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch-css": "npx tailwindcss -i ./css/tailwind.css -o ./css/style.css --watch"
+    },
+    "author": "inilabs",
+    "license": "ISC",
+    "devDependencies": {
+        "tailwindcss": "^3.2.3"
+    }
+}

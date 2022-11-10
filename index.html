@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS All Files -->
+    <link rel="stylesheet" href="fonts/rubik-text.css">
+    <link rel="stylesheet" href="fonts/material-icon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JS ALL Files -->
+    <script defer src="js/script.js"></script>
+
+    <title>Tomatoo :: Home</title>
+</head>
+<body class="text-base font-normal font-rubik scroll-smooth text-paragraph bg-white">
+    <!--------------------------------
+            HEADER PART START               
+    --------------------------------->
+    <header class="py-6 border-b border-gray-1">
+        <div class="container flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a href="#"><img src="images/logo/pink.png" alt="logo"></a>
+                <div class="relative dropdown">
+                    <button class="flex items-center text-left gap-2 dropdown-btn">
+                        <h3 class="capitalize text-xs font-medium text-heading">
+                            <span class="block font-normal mb-0.5">branch</span>
+                            Bashundhara R/A
+                        </h3>
+                        <i class="material-icons text-xl text-primary-1">expand_more</i>
+                    </button>
+                    <ul class="p-2 w-fit rounded-lg shadow-xl absolute top-14 right-0 z-10 border border-gray-200 bg-white hidden dropdown-list">
+                        <li class="flex items-center gap-2 w-full px-2.5 rounded-md hover:bg-gray-200">
+                            <input type="radio" id="gulshan" value="gulshan" name="area" class="w-3 cursor-pointer mb-[1px] accent-primary-1">
+                            <label for="gulshan" class="capitalize leading-8 text-sm min-w-[150px] cursor-pointer text-heading">gulshan</label>
+                        </li>
+                        <li class="flex items-center gap-2 w-full px-2.5 rounded-md hover:bg-gray-200">
+                            <input type="radio" id="banani" value="banani" name="area" class="w-3 cursor-pointer mb-[1px] accent-primary-1">
+                            <label for="banani" class="capitalize leading-8 text-sm min-w-[150px] cursor-pointer text-heading">banani</label>
+                        </li>
+                        <li class="flex items-center gap-2 w-full px-2.5 rounded-md hover:bg-gray-200">
+                            <input type="radio" id="bashundhara" value="bashundhara" name="area" class="w-3 cursor-pointer mb-[1px] accent-primary-1">
+                            <label for="bashundhara" class="capitalize leading-8 text-sm min-w-[150px] cursor-pointer text-heading">bashundhara R/A</label>
+                        </li>
+                        <li class="flex items-center gap-2 w-full px-2.5 rounded-md hover:bg-gray-200">
+                            <input type="radio" id="dhanmondi" value="dhanmondi" name="area" class="w-3 cursor-pointer mb-[1px] accent-primary-1">
+                            <label for="dhanmondi" class="capitalize leading-8 text-sm min-w-[150px] cursor-pointer text-heading">dhanmondi</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav>
+                <div class="items-center justify-between hidden">
+                    <a href="#"><img src="images/logo/pink.png" alt="logo"></a>
+                    <button class="material-icons text-xl w-7 h-7 leading-7 text-center rounded-full
+                    bg-gray-1 hover:text-white hover:bg-negative-default">close</button>
+                </div>
+                <div class="flex items-center justify-center gap-6">
+                    <a href="#" class="capitalize text-sm font-medium text-primary-1">home</a>
+                    <a href="#" class="capitalize text-sm font-medium text-heading">menu</a>
+                    <a href="#" class="capitalize text-sm font-medium text-heading">offers</a>
+                </div>
+            </nav>
+            <div class="flex items-center justify-end gap-3">
+                <form class="flex items-center justify-center gap-2 px-2 w-52 h-8 rounded-3xl focus-within:bg-gray-200 bg-gray-2">
+                    <button class="material-icons text-xl text-gray-400">search</button>
+                    <input type="search" placeholder="search" class="w-full h-full pb-0.5">
+                </form>
+                <div class="relative dropdown">
+                    <button class="btn text-heading bg-white border-gray-1 dropdown-btn">
+                        <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
+                        <span>english</span>
+                    </button>
+                    <ul class="p-2 w-fit rounded-lg shadow-xl absolute top-14 right-0 z-10 border border-gray-200 bg-white hidden dropdown-list">
+                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                            <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
+                            <span class="text-heading capitalize text-sm">english</span>
+                        </li>
+                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                            <img src="images/flag/australia.png" alt="flag" class="w-4 h-4 rounded-full">
+                            <span class="text-heading capitalize text-sm">australia</span>
+                        </li>
+                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                            <img src="images/flag/germany.png" alt="flag" class="w-4 h-4 rounded-full">
+                            <span class="text-heading capitalize text-sm">germany</span>
+                        </li>
+                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                            <img src="images/flag/norway.png" alt="flag" class="w-4 h-4 rounded-full">
+                            <span class="text-heading capitalize text-sm">norway</span>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn text-white bg-heading">
+                    <i class="material-icons text-lg">shopping_bag</i>
+                    <span>$0.00</span>
+                </button>
+                <button class="btn text-white bg-primary-1">
+                    <i class="material-icons text-lg">account_circle</i>
+                    <span>log in</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!--------------------------------
+            HEADER PART END               
+    --------------------------------->
+</body>
+</html>
