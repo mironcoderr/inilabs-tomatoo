@@ -1,11 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class',
     content: [
         './pages/**/*.{html,js,jsx}',
         './index.html',
     ],
     theme: {
         extend: {
+            screens: {
+                'xs': "400px"
+            },
+            boxShadow: {
+                "xl-top": "0 -20px 25px -5px rgb(0 0 0 / 0.1), 0 -8px 10px -6px rgb(0 0 0 / 0.1)",
+            },
             fontFamily: {
                 "inter": ["Inter", "sans-serif"],
                 "rubik": ["Rubik", "sans-serif"],

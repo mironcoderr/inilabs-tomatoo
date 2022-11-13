@@ -6,23 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SWIPER LIBRARY -->
+    <link rel="stylesheet" href="lib/swiper/bundle.min.css">
+    <script defer src="lib/swiper/bundle.min.js"></script>
+    <script defer src="lib/swiper/initialize.js"></script>
+
     <!-- CSS All Files -->
     <link rel="stylesheet" href="fonts/rubik-text.css">
     <link rel="stylesheet" href="fonts/material-icon.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- JS ALL Files -->
-    <script defer type="module" src="js/script.js"></script>
+    <script defer src="js/direction.js"></script>
+    <script defer src="js/dropdown.js"></script>
+    <script defer src="js/drawer.js"></script>
+    <script defer src="js/script.js"></script>
 
     <title>Tomatoo :: Home</title>
 </head>
 <body class="text-base font-normal font-rubik scroll-smooth text-paragraph bg-white">
+
+    <!-- BACKDROP -->
+    <div class="w-full h-screen fixed top-20 left-0 z-30 invisible opacity-0 bg-black/60 transition backdrop"></div>
+
     <!--------------------------------
             HEADER PART START               
     --------------------------------->
-    <header class="py-6 border-b border-gray-1">
-        <div class="container flex items-center justify-between">
-            <div class="flex items-center gap-8">
+    <header class="py-3 md:py-5 mb-3 lg:mb-7">
+        <div class="container flex flex-col lg:flex-row items-center justify-between">
+            <div class="w-full flex items-center justify-between gap-5 mb-6 lg:mb-0 xl:gap-8 lg:justify-start lg:w-fit">
                 <a href="#"><img src="images/logo/pink.png" alt="logo"></a>
                 <div class="relative dropdown-group">
                     <button class="flex items-center text-left gap-2 dropdown-btn">
@@ -52,60 +64,162 @@
                     </ul>
                 </div>
             </div>
-            <nav>
-                <div class="items-center justify-between hidden">
-                    <a href="#"><img src="images/logo/pink.png" alt="logo"></a>
-                    <button class="material-icons text-xl w-7 h-7 leading-7 text-center rounded-full
-                    bg-gray-1 hover:text-white hover:bg-negative-default">close</button>
-                </div>
-                <div class="flex items-center justify-center gap-6">
-                    <a href="#" class="capitalize text-sm font-medium text-primary-1">home</a>
-                    <a href="#" class="capitalize text-sm font-medium text-heading">menu</a>
-                    <a href="#" class="capitalize text-sm font-medium text-heading">offers</a>
-                </div>
+            <nav class="items-center justify-center gap-6 hidden lg:flex">
+                <a href="#" class="capitalize text-sm font-medium text-primary-1">home</a>
+                <a href="#" class="capitalize text-sm font-medium text-heading">menu</a>
+                <a href="#" class="capitalize text-sm font-medium text-heading">offers</a>
             </nav>
-            <div class="flex items-center justify-end gap-3">
-                <form class="flex items-center justify-center gap-2 px-2 w-52 h-8 rounded-3xl focus-within:bg-gray-200 bg-gray-2">
+            <div class="flex flex-col items-center djustify-end gap-3 w-full xs:flex-row lg:w-fit">
+                <form class="flex items-center justify-center gap-2 px-2 w-full lg:w-52 h-8 rounded-3xl focus-within:bg-gray-200 bg-gray-2">
                     <button class="material-icons text-xl text-gray-400">search</button>
                     <input type="search" placeholder="search" class="w-full h-full pb-0.5">
                 </form>
-                <div class="relative dropdown-group">
-                    <button class="btn text-heading bg-white border-gray-1 dropdown-btn lang-btn">
-                        <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
-                        <span>english</span>
-                    </button>
-                    <ul class="p-2 min-w-[180px] rounded-lg shadow-xl absolute top-14 right-0 z-10 border border-gray-200 bg-white hidden dropdown-list">
-                        <li data-dir="ltr" data-lang="en" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
+                <div class="flex items-center gap-3 flex-shrink-0 w-full xs:w-fit">
+                    <div class="relative dropdown-group w-full xs:w-fit">
+                        <button class="btn text-heading bg-white border-gray-1 dropdown-btn lang-btn w-full xs:w-fit">
                             <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
-                            <span class="text-heading capitalize text-sm">english</span>
-                        </li>
-                        <li data-dir="rtl" data-lang="au" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
-                            <img src="images/flag/australia.png" alt="flag" class="w-4 h-4 rounded-full">
-                            <span class="text-heading capitalize text-sm">australia</span>
-                        </li>
-                        <li data-dir="ltr" data-lang="de" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
-                            <img src="images/flag/germany.png" alt="flag" class="w-4 h-4 rounded-full">
-                            <span class="text-heading capitalize text-sm">germany</span>
-                        </li>
-                        <li data-dir="rtl" data-lang="no" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
-                            <img src="images/flag/norway.png" alt="flag" class="w-4 h-4 rounded-full">
-                            <span class="text-heading capitalize text-sm">norway</span>
-                        </li>
-                    </ul>
+                            <span class="whitespace-nowrap">english</span>
+                        </button>
+                        <ul class="p-2 min-w-[180px] rounded-lg shadow-xl absolute top-14 ltr:right-0 rtl:left-0 z-10 border border-gray-200 bg-white hidden dropdown-list">
+                            <li data-dir="ltr" data-lang="en" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
+                                <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
+                                <span class="text-heading capitalize text-sm">english</span>
+                            </li>
+                            <li data-dir="rtl" data-lang="au" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
+                                <img src="images/flag/australia.png" alt="flag" class="w-4 h-4 rounded-full">
+                                <span class="text-heading capitalize text-sm">australia</span>
+                            </li>
+                            <li data-dir="ltr" data-lang="de" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
+                                <img src="images/flag/germany.png" alt="flag" class="w-4 h-4 rounded-full">
+                                <span class="text-heading capitalize text-sm">germany</span>
+                            </li>
+                            <li data-dir="rtl" data-lang="no" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
+                                <img src="images/flag/norway.png" alt="flag" class="w-4 h-4 rounded-full">
+                                <span class="text-heading capitalize text-sm">norway</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn text-white bg-heading cart-btn hidden lg:flex">
+                        <i class="material-icons text-lg">shopping_bag</i>
+                        <span class="whitespace-nowrap">$0.00</span>
+                    </button>
+                    <a href="#" class="btn text-white bg-primary-1 w-full xs:w-fit">
+                        <i class="material-icons text-lg">account_circle</i>
+                        <span class="whitespace-nowrap">log in</span>
+                    </a>
                 </div>
-                <button class="btn text-white bg-heading">
-                    <i class="material-icons text-lg">shopping_bag</i>
-                    <span>$0.00</span>
-                </button>
-                <button class="btn text-white bg-primary-1">
-                    <i class="material-icons text-lg">account_circle</i>
-                    <span>log in</span>
-                </button>
             </div>
         </div>
     </header>
     <!--------------------------------
             HEADER PART END               
+    --------------------------------->
+
+
+    <!--------------------------------
+           MOBILE NAV PART START              
+    --------------------------------->
+    <nav class="flex items-center justify-between py-2 px-5 fixed bottom-0 left-0 z-20 w-full shadow-xl-top bg-white lg:hidden">
+        <a href="#" class="flex flex-col items-center gap-0.5 text-primary-1">
+            <i class="material-icons text-xl leading-none">home</i>
+            <span class="text-xs capitalize">home</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-0.5">
+            <i class="material-icons text-xl leading-none">widgets</i>
+            <span class="text-xs capitalize">menu</span>
+        </a>
+        <button class="material-icons w-12 h-12 leading-[48px] text-center rounded-full -mt-8 text-white bg-primary-1
+        relative before:absolute before:top-3 ltr:before:right-2.5 rtl:before:left-2.5 before:w-2 before:h-2 before:rounded-full 
+        before:shadow before:bg-[#FFDB1F] cart-btn">
+            shopping_bag
+        </button>
+        <a href="#" class="flex flex-col items-center gap-0.5">
+            <i class="material-icons text-xl leading-none">discount</i>
+            <span class="text-xs capitalize">offers</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-0.5">
+            <i class="material-icons text-xl leading-none">account_circle</i>
+            <span class="text-xs capitalize">profile</span>
+        </a>
+    </nav>
+    <!--------------------------------
+           MOBILE NAV PART END              
+    --------------------------------->
+
+
+    <!--------------------------------
+          CART SIDEBAR PART START              
+    --------------------------------->
+    <aside class="max-w-sm w-full h-screen fixed top-20 ltr:-right-96 rtl:-left-96 ltr:ml-auto rtl:mr-auto z-50 bg-red-400 transition cart-div">
+        hfghsfgh
+        <button class="material-icons cart-close">close</button>
+    </aside>
+    <!--------------------------------
+          CART SIDEBAR PART END                
+    --------------------------------->
+
+
+    <!--------------------------------
+            BANNER PART START               
+    --------------------------------->
+    <div class="container mb-12">
+        <img class="w-full rounded-2xl" src="images/banner/01.jpg" alt="banner">
+    </div>
+    <!--------------------------------
+            BANNER PART END               
+    --------------------------------->
+
+
+    <!--------------------------------
+              MENU PART START               
+    --------------------------------->
+    <section class="mb-12">
+        <div class="container">
+            <div class="flex items-center justify-between gap-2 mb-5">
+                <h2 class="text-2xl font-semibold capitalize">our menu</h2>
+                <a href="#" class="btn text-primary-1 bg-primary-1/10 hover:text-white hover:bg-primary-1">view all</a>
+            </div>
+            <!-- Slider main container -->
+            <div class="swiper menuSwiper">
+                <div class="swiper-wrapper">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                        <img class="h-12" src="images/category/01.png" alt="category">
+                        <h3 class="text-xs font-medium">Friends & Family Combo</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------
+              MENU PART END               
     --------------------------------->
     
 </body>

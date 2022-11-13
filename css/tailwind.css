@@ -5,12 +5,26 @@
 @layer base {
     input {
         @apply 
-            placeholder:text-sm placeholder:capitalize placeholder:text-placeholder
-            focus-within:outline-none bg-transparent
+        placeholder:text-sm placeholder:capitalize placeholder:text-placeholder
+        focus-within:outline-none bg-transparent
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 { @apply text-heading }
 }
 
 @layer components {
+    .btn { @apply flex items-center justify-center gap-1.5 w-fit rounded-3xl capitalize text-sm font-medium h-8 px-3 border transition }
     .container { @apply max-w-6xl mx-auto px-4 }
-    .btn { @apply flex items-center justify-center gap-1.5 w-fit rounded-3xl capitalize text-sm font-medium h-8 px-3 border }
+    .backdrop.active { @apply visible opacity-100 transition }
+    .cart-div.active { @apply ltr:right-0 rtl:left-0 transition }
+    .nav-div.active { @apply ltr:left-0 rtl:right-0 transition }
+}
+
+@layer utilities {
+    .transition { @apply transition-all duration-300 ease-linear }
 }
