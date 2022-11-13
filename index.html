@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <!-- Required Meta Tags -->
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- JS ALL Files -->
-    <script defer src="js/script.js"></script>
+    <script defer type="module" src="js/script.js"></script>
 
     <title>Tomatoo :: Home</title>
 </head>
@@ -24,7 +24,7 @@
         <div class="container flex items-center justify-between">
             <div class="flex items-center gap-8">
                 <a href="#"><img src="images/logo/pink.png" alt="logo"></a>
-                <div class="relative dropdown">
+                <div class="relative dropdown-group">
                     <button class="flex items-center text-left gap-2 dropdown-btn">
                         <h3 class="capitalize text-xs font-medium text-heading">
                             <span class="block font-normal mb-0.5">branch</span>
@@ -69,25 +69,25 @@
                     <button class="material-icons text-xl text-gray-400">search</button>
                     <input type="search" placeholder="search" class="w-full h-full pb-0.5">
                 </form>
-                <div class="relative dropdown">
-                    <button class="btn text-heading bg-white border-gray-1 dropdown-btn">
+                <div class="relative dropdown-group">
+                    <button class="btn text-heading bg-white border-gray-1 dropdown-btn lang-btn">
                         <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
                         <span>english</span>
                     </button>
-                    <ul class="p-2 w-fit rounded-lg shadow-xl absolute top-14 right-0 z-10 border border-gray-200 bg-white hidden dropdown-list">
-                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                    <ul class="p-2 min-w-[180px] rounded-lg shadow-xl absolute top-14 right-0 z-10 border border-gray-200 bg-white hidden dropdown-list">
+                        <li data-dir="ltr" data-lang="en" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
                             <img src="images/flag/uk.png" alt="flag" class="w-4 h-4 rounded-full">
                             <span class="text-heading capitalize text-sm">english</span>
                         </li>
-                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                        <li data-dir="rtl" data-lang="au" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
                             <img src="images/flag/australia.png" alt="flag" class="w-4 h-4 rounded-full">
                             <span class="text-heading capitalize text-sm">australia</span>
                         </li>
-                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                        <li data-dir="ltr" data-lang="de" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
                             <img src="images/flag/germany.png" alt="flag" class="w-4 h-4 rounded-full">
                             <span class="text-heading capitalize text-sm">germany</span>
                         </li>
-                        <li class="flex items-center gap-2 min-w-[150px] py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200">
+                        <li data-dir="rtl" data-lang="no" class="flex items-center gap-2 py-1.5 px-2.5 rounded-md cursor-pointer hover:bg-gray-200 lang-item">
                             <img src="images/flag/norway.png" alt="flag" class="w-4 h-4 rounded-full">
                             <span class="text-heading capitalize text-sm">norway</span>
                         </li>
@@ -107,5 +107,6 @@
     <!--------------------------------
             HEADER PART END               
     --------------------------------->
+    
 </body>
 </html>

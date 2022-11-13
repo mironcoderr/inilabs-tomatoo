@@ -1,31 +1,95 @@
-// FOR DROPDOWN MENU XPAND
-document.querySelectorAll(".dropdown-btn").forEach((btn)=> {
-    btn.addEventListener("click", (event)=> {
-        const group = btn.closest(".dropdown");
-        const list = btn.closest(".dropdown").querySelector(".dropdown-list");
-        const check = group.className.includes("active");
+import add from './dropdown.js'
+"use strict";
 
-        if(!check) {
-            group.classList.add("active");
-            list.classList.replace("hidden", "block");
+console.log('sadsa')
+// DECLARE ALL ELEMENT
+const dropGroup = document.querySelectorAll(".dropdown-group");
+const dropList = document.querySelectorAll(".dropdown-list");
+const dropBtn = document.querySelectorAll(".dropdown-btn");
+const langBtn = document.querySelectorAll(".lang-btn");
+const langItem = document.querySelectorAll(".lang-item");
+
+// GET STORAGE DATA
+const flagData = localStorage.getItem("flag");
+const nameData = localStorage.getItem("name");
+const langData = localStorage.getItem("lang");
+const dirData = localStorage.getItem("dir");
+
+
+// FOR MULTIPLE DROPDOWN MENU
+dropBtn.forEach((btnItem) => {
+    btnItem.addEventListener("click", () => {
+        const currentGroup = btnItem.closest(".dropdown-group");
+        const currentList = currentGroup.querySelector(".dropdown-list");
+        const currentActive = currentGroup.className.includes("active");
+
+        if (currentActive) {
+            currentGroup.classList.remove("active");
+            currentList.classList.replace("block", "hidden");
         }
         else {
-            group.classList.remove("active");
-            list.classList.replace("block", "hidden");
+            dropGroup.forEach((groupItem) => {
+                if (groupItem.className.includes("active")) {
+                    groupItem.classList.remove("active");
+                    groupItem.querySelector("ul").classList.replace("block", "hidden");
+                }
+            })
+            currentGroup.classList.add("active");
+            currentList.classList.replace("hidden", "block");
         }
     })
 })
 
-// FOR DROPDOWN OFF
-document.addEventListener("mousedown", (event)=> {
-    const parent = document.querySelectorAll(".dropdown");
-    const child = document.querySelectorAll(".dropdown-list");
 
-    parent.forEach((parentItem)=> {
-        if(!parentItem.contains(event.target)) {
-            child.forEach((childItem)=> {
-                childItem.classList.replace("flex", "hidden");
-            })
+// FOR DROPDOWN HIDING CLICK OUTSIDE
+document.addEventListener("click", (event) => {
+    dropGroup.forEach((item) => {
+        if (!item.contains(event.target)) {
+            item.classList.remove("active");
+            item.querySelector("ul").classList.replace("block", "hidden");
         }
+    })
+})
+
+
+// DEFAULT LANGUAGE SETTING
+document.querySelector("html").dir = dirData
+document.querySelector("html").lang = langData
+
+langBtn.forEach((item) => {
+    item.querySelector("img").src = flagData
+    item.querySelector("span").textContent = nameData
+})
+
+
+// FOR LANGUAGE DIRECTION
+langItem.forEach((item) => {
+    item.addEventListener("click", function (event) {
+        langItem.forEach((allItems) => {
+            allItems.classList.remove("active");
+            console.log(allItems.getAttribute("data-dir"))
+        })
+        item.classList.add("active")
+
+        // store data
+        localStorage.setItem("flag", item.querySelector("img").getAttribute("src"));
+        localStorage.setItem("name", item.querySelector("span").textContent);
+        localStorage.setItem("lang", item.getAttribute("data-lang"));
+        localStorage.setItem("dir", item.getAttribute("data-dir"));
+
+        // get data
+        const flagData = localStorage.getItem("flag");
+        const nameData = localStorage.getItem("name");
+        const langData = localStorage.getItem("lang");
+        const dirData = localStorage.getItem("dir");
+
+        // active button
+        const btnElm = this.parentElement.previousElementSibling
+
+        // active data
+        document.querySelector("html").dir = dirData
+        document.querySelector("html").lang = langData
+        btnElm.querySelector("img").src = flagData
+        btnElm.querySelector("span").textContent = nameData
     })
 })
