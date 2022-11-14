@@ -20,6 +20,7 @@
     <script defer src="js/direction.js"></script>
     <script defer src="js/dropdown.js"></script>
     <script defer src="js/drawer.js"></script>
+    <script defer src="js/modal.js"></script>
     <script defer src="js/script.js"></script>
 
     <title>Tomatoo :: Home</title>
@@ -27,7 +28,7 @@
 <body class="text-base font-normal font-rubik scroll-smooth text-paragraph bg-white">
 
     <!-- BACKDROP -->
-    <div class="w-full h-screen fixed top-20 left-0 z-30 invisible opacity-0 bg-black/60 transition backdrop"></div>
+    <div class="w-full h-screen fixed top-0 left-0 z-30 invisible opacity-0 bg-black/60 transition backdrop"></div>
 
     <!--------------------------------
             HEADER PART START               
@@ -160,10 +161,45 @@
 
 
     <!--------------------------------
+           INFO MODAL PART START                
+    --------------------------------->
+    <div class="modal-div w-full max-w-lg fixed top-0 left-1/2 translate-y-0 -translate-x-1/2 z-50 invisible opacity-0 transition">
+        <button class="modal-close material-icons text-xl font-medium w-8 h-8 leading-8 text-center rounded-full shadow-xl transition
+        absolute top-4 ltr:right-4 rtl:left-4 bg-primary-1/10 text-primary-1 hover:bg-negative-default hover:text-white">close</button>
+        <div class="w-full rounded-xl p-5 bg-white">
+            <h3 class="text-base font-medium capitalize mb-5">Creamy Cheese Burger</h3>
+            <h4 class="text-sm font-medium capitalize mb-3">allergenen</h4>
+            <ul class="list-disc ltr:pl-5 rtl:pr-5 flex flex-col gap-1.5 mb-8">
+                <li class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+                <li class="text-sm">Lorem ipsum dolor sit amet adipisicing elit</li>
+                <li class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing</li>
+                <li class="text-sm">Lorem ipsum dolor consectetur adipisicing elit</li>
+                <li class="text-sm">Lorem ipsum dolor sit amet consectetur</li>
+            </ul>
+            <p class="text-xs leading-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique dolorum excepturi aperiam fugit dolorem officia tenetur reprehenderit delectus odio dignissimos quo eum, voluptas modi consectetur ducimus maxime, a possimus laboriosam dicta, <a class="text-blue-600 underline" href="#">suscipitvelit</a>! Eligendi explicabo libero modi! Doloribus, quaerat repellendus</p>
+        </div>
+    </div>
+    <!--------------------------------
+           INFO MODAL PART END                
+    --------------------------------->
+
+
+    <!-------------------------------- 
             BANNER PART START               
     --------------------------------->
     <div class="container mb-12">
-        <img class="w-full rounded-2xl" src="images/banner/01.jpg" alt="banner">
+        <div class="swiper banner-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img class="w-full rounded-2xl" src="images/banner/01.jpg" alt="banner"></div>
+                <div class="swiper-slide"><img class="w-full rounded-2xl" src="images/banner/01.jpg" alt="banner"></div>
+                <div class="swiper-slide"><img class="w-full rounded-2xl" src="images/banner/01.jpg" alt="banner"></div>
+            </div>
+            <div class="banner-swiper-pagination hidden sm:flex items-center justify-center gap-2.5 absolute z-10 !bottom-6"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 z-10 px-2 sm:px-5 w-full flex items-center justify-between transition opacity-0 sm:opacity-100 banner-swiper-navigate">
+                <div class="banner-swiper-button-prev material-icons after:hidden text-xl sm:text-2xl w-8 h-8 leading-8 sm:w-10 sm:h-10 sm:leading-10 text-center rounded-full shadow-lg transition text-paragraph bg-white hover:text-white hover:bg-primary-1">chevron_left</div>
+                <div class="banner-swiper-button-next material-icons after:hidden text-xl sm:text-2xl w-8 h-8 leading-8 sm:w-10 sm:h-10 sm:leading-10 text-center rounded-full shadow-lg transition text-paragraph bg-white hover:text-white hover:bg-primary-1">chevron_right</div>
+            </div>
+        </div>
     </div>
     <!--------------------------------
             BANNER PART END               
@@ -175,43 +211,42 @@
     --------------------------------->
     <section class="mb-12">
         <div class="container">
-            <div class="flex items-center justify-between gap-2 mb-5">
+            <div class="flex items-center justify-between gap-2 mb-6">
                 <h2 class="text-2xl font-semibold capitalize">our menu</h2>
                 <a href="#" class="btn text-primary-1 bg-primary-1/10 hover:text-white hover:bg-primary-1">view all</a>
             </div>
-            <!-- Slider main container -->
-            <div class="swiper menuSwiper">
+            <div class="swiper menu-swiper">
                 <div class="swiper-wrapper">
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
                         <img class="h-12" src="images/category/01.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/02.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/03.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/04.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/05.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/06.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/07.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
-                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b border-transparent bg-primary-1/10 hover:bg-primary-1/10 hover:border-primary-1">
-                        <img class="h-12" src="images/category/01.png" alt="category">
+                    <a href="#" class="swiper-slide w-32 flex flex-col items-center text-center gap-4 p-5 rounded-2xl border-b-2 border-transparent hover:bg-primary-1/10 hover:border-primary-1 bg-gray-2">
+                        <img class="h-12" src="images/category/08.png" alt="category">
                         <h3 class="text-xs font-medium">Friends & Family Combo</h3>
                     </a>
                 </div>
@@ -222,5 +257,90 @@
               MENU PART END               
     --------------------------------->
     
+
+    <!--------------------------------
+               NEW PART START               
+    --------------------------------->
+    <section class="mb-12">
+        <div class="container">
+            <div class="flex items-center justify-between gap-2 mb-6">
+                <h2 class="text-2xl font-semibold capitalize">new items</h2>
+                <a href="#" class="btn text-primary-1 bg-primary-1/10 hover:text-white hover:bg-primary-1">view all</a>
+            </div>
+            <div class="grid grid-cols-4 gap-6">
+                <div class="rounded-2xl border transition border-gray-200 bg-white hover:shadow-xl">
+                    <img class="w-full rounded-t-2xl" src="images/product/01.jpg" alt="product">
+                    <div class="py-4 px-3 rounded-b-2xl">
+                        <div class="flex gap-2 mb-2">
+                            <h3 class="text-sm font-medium capitalize">Creamy Cheese Burger</h3>
+                            <button class="material-icons text-xl leading-none hover:text-primary-1 modal-btn">info</button>
+                        </div>
+                        <p class="text-xs text-ellipsis mb-3">Our CHICK and CRISP™ is loaded with choppe dlettuce, a light layer of creamy cheese .....</p>
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="text-lg font-medium">$5.60</h4>
+                            <button class="btn text-primary-1 bg-primary-1/10 hover:bg-primary-1 hover:text-white">
+                                <i class="material-icons text-base">shopping_cart</i>
+                                <span class="text-xs">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border transition border-gray-200 bg-white hover:shadow-xl">
+                    <img class="w-full rounded-t-2xl" src="images/product/02.jpg" alt="product">
+                    <div class="py-4 px-3 rounded-b-2xl">
+                        <div class="flex gap-2 mb-2">
+                            <h3 class="text-sm font-medium capitalize">Creamy Cheese Burger</h3>
+                            <button class="material-icons text-xl leading-none hover:text-primary-1 modal-btn">info</button>
+                        </div>
+                        <p class="text-xs text-ellipsis mb-3">Our CHICK and CRISP™ is loaded with choppe dlettuce, a light layer of creamy cheese .....</p>
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="text-lg font-medium">$5.60</h4>
+                            <button class="btn text-primary-1 bg-primary-1/10 hover:bg-primary-1 hover:text-white">
+                                <i class="material-icons text-base">shopping_cart</i>
+                                <span class="text-xs">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border transition border-gray-200 bg-white hover:shadow-xl">
+                    <img class="w-full rounded-t-2xl" src="images/product/03.jpg" alt="product">
+                    <div class="py-4 px-3 rounded-b-2xl">
+                        <div class="flex gap-2 mb-2">
+                            <h3 class="text-sm font-medium capitalize">Creamy Cheese Burger</h3>
+                            <button class="material-icons text-xl leading-none hover:text-primary-1 modal-btn">info</button>
+                        </div>
+                        <p class="text-xs text-ellipsis mb-3">Our CHICK and CRISP™ is loaded with choppe dlettuce, a light layer of creamy cheese .....</p>
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="text-lg font-medium">$5.60</h4>
+                            <button class="btn text-primary-1 bg-primary-1/10 hover:bg-primary-1 hover:text-white">
+                                <i class="material-icons text-base">shopping_cart</i>
+                                <span class="text-xs">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl border transition border-gray-200 bg-white hover:shadow-xl">
+                    <img class="w-full rounded-t-2xl" src="images/product/04.jpg" alt="product">
+                    <div class="py-4 px-3 rounded-b-2xl">
+                        <div class="flex gap-2 mb-2">
+                            <h3 class="text-sm font-medium capitalize">Creamy Cheese Burger</h3>
+                            <button class="material-icons text-xl leading-none hover:text-primary-1 modal-btn">info</button>
+                        </div>
+                        <p class="text-xs text-ellipsis mb-3">Our CHICK and CRISP™ is loaded with choppe dlettuce, a light layer of creamy cheese .....</p>
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="text-lg font-medium">$5.60</h4>
+                            <button class="btn text-primary-1 bg-primary-1/10 hover:bg-primary-1 hover:text-white">
+                                <i class="material-icons text-base">shopping_cart</i>
+                                <span class="text-xs">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------
+               NEW PART END               
+    --------------------------------->
 </body>
 </html>

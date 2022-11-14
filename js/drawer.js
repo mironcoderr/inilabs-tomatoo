@@ -8,8 +8,6 @@ const cartBtn = document.querySelectorAll(".cart-btn");
 const cartDiv = document.querySelector(".cart-div");
 const cartClose = document.querySelector(".cart-close");
 
-console.log(cartBtn);
-
 // cart sidebar & backdrop open
 cartBtn.forEach((btnItem) => {
     btnItem.addEventListener("click", function() {
