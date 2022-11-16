@@ -24,6 +24,7 @@
     .cart-div.active { @apply ltr:right-0 rtl:left-0 transition }
     .nav-div.active { @apply ltr:left-0 rtl:right-0 transition }
     .modal-div.active { @apply visible opacity-100 translate-y-20 }
+    .tab-btn.active { @apply text-white bg-highlight-default }
 }
 
 @layer utilities {
@@ -33,3 +34,14 @@
 .swiper:hover .banner-swiper-navigate { @apply opacity-100 }
 .swiper-pagination-bullet { @apply text-xs font-normal w-5 h-5 leading-5 text-center rounded-full shadow-md opacity-100 !m-0 text-paragraph bg-white }
 .swiper-pagination-bullet-active { @apply bg-primary-1 text-white }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield; 
+}

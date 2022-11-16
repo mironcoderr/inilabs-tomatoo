@@ -13,6 +13,7 @@ cartBtn.forEach((btnItem) => {
     btnItem.addEventListener("click", function() {
         cartDiv.classList.add("active")
         backdrop.classList.add("active")
+        document.body.style.overflow = "hidden"
     })
 })
 
@@ -20,10 +21,12 @@ cartBtn.forEach((btnItem) => {
 backdrop.addEventListener("click", function() {
     cartDiv.classList.remove("active")
     backdrop.classList.remove("active")
+    document.body.style.overflowY = "scroll"
 })
 
 // cart sidebar close via button
 cartClose.addEventListener("click", function() {
     cartDiv.classList.remove("active")
     backdrop.classList.remove("active")
+    document.body.style.overflowY = "scroll"
 })
